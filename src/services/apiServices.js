@@ -48,7 +48,7 @@ const postlogin = (userEmail, userPassword) => {
         {
             email: userEmail,
             password: userPassword,
-            delay: 5000
+            delay: 3000
         })
 }
 
