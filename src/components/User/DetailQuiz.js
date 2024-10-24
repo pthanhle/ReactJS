@@ -62,19 +62,46 @@ const DetailQuiz = (props) => {
         let question = dataQuizClone.find(item => +item.questionId === +questionId)
         if (question && question.answers) {
 
-            let b = question.answers.map(item => {
+            question.answers = question.answers.map(item => {
                 if (+item.id === +answerId) {
                     item.isSelected = !item.isSelected;
                 }
                 return item;
             })
-            question.answers = b;
-            // console.log(b);
         }
         let index = dataQuizClone.findIndex(item => +item.questionId === +questionId)
         if (index > -1) {
             dataQuizClone[index] = question;
             setDataQuiz(dataQuizClone);
+        }
+    }
+
+    const handleFinishQuiz = () => {
+        console.log("check data before submit: ", dataQuiz)
+        let payload = {
+            quizId: +quizId,
+            answers: []
+        };
+        let answers = [];
+        if (dataQuiz && dataQuiz.length > 0) {
+            dataQuiz.forEach(question => {
+
+                let questionId = question.questionId;
+                let userAnswerId = [];
+
+                question.answers.forEach(a => {
+                    if (a.isSelected) {
+                        userAnswerId.push(a.id);
+                    }
+                })
+                answers.push({
+                    questionId: +questionId,
+                    userAnswerId: userAnswerId,
+                });
+            })
+
+            payload.answers = answers;
+            console.log("final payload: ", payload);
         }
     }
 
@@ -105,7 +132,7 @@ const DetailQuiz = (props) => {
                         onClick={() => handleNext()}
                     >Next</button>
                     <button className="btn btn-warning"
-                        onClick={() => handleNext()}
+                        onClick={() => handleFinishQuiz()}
                     >Finish</button>
                 </div>
             </div>
