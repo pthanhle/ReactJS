@@ -13,9 +13,11 @@ import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } fro
 import sidebarBg from '../../assets/bg2.jpg';
 import { GrTechnology } from "react-icons/gr";
 import { MdDashboard } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
+
+    const nagivate = useNavigate();
     return (
         <>
             <ProSidebar
@@ -39,7 +41,9 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
                         }}
                     >
                         <GrTechnology size={'3em'} color='00bfff' />
-                        <span>PhTh SideBar</span>
+                        <span onClick={() => nagivate('/')}>
+                            PhTh SideBar
+                        </span>
 
                     </div>
                 </SidebarHeader>
@@ -68,7 +72,7 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
                             </MenuItem>
                             <MenuItem>
                                 Quản lí bài Quizz
-                                <Link to='/admin/manage-quizz' />
+                                <Link to='/admin/manage-quizzes' />
                             </MenuItem>
                             <MenuItem>
                                 Quản lí câu hỏi

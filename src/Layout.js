@@ -11,13 +11,13 @@ import ManageUser from './components/Admin/Content/ManageUser';
 import DashBoard from './components/Admin/Content/DashBoard';
 import { Outlet } from 'react-router-dom';
 import ManageQuestion from './components/Admin/Content/ManageQuestion';
-import ManageQuizz from './components/Admin/Content/ManageQuizz';
 import Login from './components/Auth/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from "./components/Auth/Register";
 import ListQuiz from "./components/User/ListQuiz";
 import DetailQuiz from "./components/User/DetailQuiz";
+import ManageQuiz from "./components/Admin/Content/Quiz/ManageQuiz";
 
 const NotFound = () => {
     return (
@@ -41,7 +41,7 @@ const Layout = (props) => {
                 <Route path='/admin' element={<Admin />} >
                     <Route index element={<DashBoard />} />
                     <Route path='manage-users' element={<ManageUser />} />
-                    <Route path='manage-quizz' element={< ManageQuizz />} />
+                    <Route path='manage-quizzes' element={<ManageQuiz />} />
                     <Route path='manage-questions' element={<ManageQuestion />} />
                 </Route>
                 <Route path='/login' element={<Login />} />
