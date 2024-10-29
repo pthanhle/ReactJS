@@ -13,6 +13,8 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import "react-awesome-lightbox-react-18/build/style.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
