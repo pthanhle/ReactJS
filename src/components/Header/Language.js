@@ -1,11 +1,18 @@
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useTranslation } from 'react-i18next';
 
 const Language = (props) => {
+
+    const { t, i18n } = useTranslation();
+    const handleChangeLanguage = (language) => {
+        i18n.changeLanguage(language)
+    }
+
     return (
         <>
-            <NavDropdown title='Language' id='basic-nav-dropdown2' className='languages'>
-                <NavDropdown.Item>ENG</NavDropdown.Item>
-                <NavDropdown.Item>VN</NavDropdown.Item>
+            <NavDropdown title={i18n.language === 'vi' ? 'Tiếng Việt' : 'English'} id='basic-nav-dropdown2' className='languages'>
+                <NavDropdown.Item onClick={() => handleChangeLanguage('en')}>ENG</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleChangeLanguage('vi')}>VI</NavDropdown.Item>
             </NavDropdown>
         </>
     )
