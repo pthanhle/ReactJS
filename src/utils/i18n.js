@@ -17,38 +17,6 @@ i18n
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
-        resources: {
-            en: {
-                translation: {
-                    // here we will place our translations...
-                    homepage: {
-                        title1: "There's a better way to ask...",
-                        title2: `You don't want to make a boring from.
-                        And your audience won't answer one.
-                        Created a typeform instead - and make everyone happy.`,
-                        title3: {
-                            login: `Get's started. It's free`,
-                            user: `Doing Quiz Now`
-                        }
-                    }
-                }
-            },
-            vi: {
-                translation: {
-                    // here we will place our translations...
-                    homepage: {
-                        title1: "Có rất nhiều cách để hỏi...",
-                        title2: `Bạn không muốn tạo ra sự nhàm chán.
-                        Và khán giả của bạn sẽ không trả lời một.
-                        Thay vào đó, hãy tạo một kiểu chữ - và làm cho mọi người hài lòng.`,
-                        title3: {
-                            login: `Hãy bắt đầu. Nó miễn phí`,
-                            user: `Bắt đầu làm bài ngay bây giờ`,
-                        }
-                    }
-                }
-            },
-        }
     });
 
 export default i18n;
